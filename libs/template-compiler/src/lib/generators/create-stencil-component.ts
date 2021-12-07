@@ -41,6 +41,7 @@ export function createStencilComponent(
       ),
       factory.createStringLiteral('@stencil/core')
     ),
+    ts.factory.createIdentifier('\n') as any, // insert new line
     factory.createClassDeclaration(
       [
         factory.createDecorator(

@@ -4,26 +4,47 @@
     <meta charset="utf-8" />
     <title>Editor</title>
     <base href="/" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link
       href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body>
-    <div class="container">
-      <div id="editor" class="editor"></div>
-      <div class="output">
-        <pre><code id="result">Hello World</code></pre>
+    <header class="mdc-top-app-bar mdc-top-app-bar--short">
+      <div class="mdc-top-app-bar__row">
+        <section
+          class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+        >
+          <span class="mdc-top-app-bar__title">Gramener Stencil Compiler</span>
+        </section>
+        <section
+          class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"
+          role="toolbar"
+        >
+          <a
+            class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+            aria-label="View the GitHub repository"
+            href="https://github.com"
+          >
+            code
+          </a>
+        </section>
       </div>
-    </div>
+    </header>
+
+    <main class="mdc-top-app-bar--short-fixed-adjust">
+      <div class="container">
+        <div id="editor" class="editor"></div>
+        <div class="output">
+          <pre class="language-typescript hljs"><code id="result"></code></pre>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

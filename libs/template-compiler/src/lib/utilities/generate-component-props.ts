@@ -7,20 +7,23 @@ export function generateComponentProps(props: Map<string, PropDefinition>) {
   const properties: ts.PropertyDeclaration[] = [];
 
   // map each property in the map
-  props.forEach((prop, key) => properties.push(createProperty(key, prop)));
+  props.forEach((prop, key) => properties.push(...createProperty(key, prop)));
 
   return properties;
 }
 
 function createProperty(key: string, prop: PropDefinition) {
-  return factory.createPropertyDeclaration(
-    [createPropDecorator()],
-    undefined,
-    factory.createIdentifier(key),
-    undefined,
-    getTypeAnnotation(prop),
-    prop.value
-  );
+  return [
+    factory.createPropertyDeclaration(
+      [createPropDecorator()],
+      undefined,
+      factory.createIdentifier(key),
+      undefined,
+      getTypeAnnotation(prop),
+      prop.value
+    ),
+    ts.factory.createIdentifier('\n') as any, // insert new line
+  ];
 }
 
 function createPropDecorator() {
