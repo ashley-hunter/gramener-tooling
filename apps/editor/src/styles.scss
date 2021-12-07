@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.editor {
+  flex: 1;
+  height: 100%;
+}
+
+.output {
+  flex: 1;
+  height: 100%;
+}

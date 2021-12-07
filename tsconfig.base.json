@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@gramener-tooling/template-compiler": [
+        "libs/template-compiler/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
