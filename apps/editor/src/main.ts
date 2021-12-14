@@ -20,9 +20,12 @@ generateStencilCode();
 editor.onDidChangeModelContent(() => generateStencilCode());
 
 function generateStencilCode() {
-  const code = editor.getValue();
-  const result = templateCompiler(code);
   const resultContainer = document.getElementById('result');
+
+  resultContainer.innerHTML = '';
+  const code = editor.getValue();
+
+  const result = templateCompiler(code);
 
   const formatted = format(result, {
     parser: 'typescript',
